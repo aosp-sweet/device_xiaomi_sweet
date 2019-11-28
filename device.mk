@@ -104,7 +104,8 @@ TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS := \
     init \
-    overlay
+    overlay \
+    wlan
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -130,3 +131,12 @@ PRODUCT_PACKAGES += \
 
 # Vendor
 $(call inherit-product, vendor/xiaomi/sweet/sweet-vendor.mk)
+
+# WiFi
+PRODUCT_PACKAGES += \
+    libwpa_client
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
