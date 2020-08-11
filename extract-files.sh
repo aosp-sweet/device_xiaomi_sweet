@@ -53,6 +53,11 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+    vendor/lib64/hw/camera.qcom.so)
+        $PATCHELF_TOOL --remove-needed "libMegviiFacepp-0.5.2.so" "${2}"
+        $PATCHELF_TOOL --remove-needed "libmegface.so" "${2}"
+        $PATCHELF_TOOL --add-needed "libshim_megvii.so" "${2}"
+        ;;
     esac
 }
 
