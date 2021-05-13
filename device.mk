@@ -181,7 +181,8 @@ PRODUCT_COPY_FILES += \
 # Init
 PRODUCT_PACKAGES += \
     init.qti.dcvs.sh \
-    init.target.rc
+    init.target.rc \
+    init.xiaomi.perf.rc
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -233,6 +234,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     gps \
     init \
     overlay \
+    perf \
     wlan
 
 # Sensors
