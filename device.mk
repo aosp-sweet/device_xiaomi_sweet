@@ -180,7 +180,8 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.target.rc \
+    init.qti.dcvs.sh \
+    init.target.rc
 
 # IRSC
 PRODUCT_COPY_FILES += \
