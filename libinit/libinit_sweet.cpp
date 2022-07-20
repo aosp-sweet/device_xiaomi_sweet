@@ -17,7 +17,8 @@ static const variant_info_t sweet_global_info = {
     .device = "sweet",
     .marketname = "Redmi Note 10 Pro",
     .model = "M2101K6G",
-    .build_fingerprint = "Redmi/sweet_global/sweet:11/RKQ1.200826.002/V12.5.4.0.RKFMIXM:user/release-keys",
+    .build_fingerprint = "Redmi/sweet_global/sweet:12/RKQ1.210614.002/V13.0.8.0.SKFMIXM:user/release-keys",
+    .build_description = "sweet_global-user 12 SKQ1.210908.001 V13.0.8.0.SKFMIXM release-keys",
 
     .nfc = true,
 };
@@ -30,7 +31,8 @@ static const variant_info_t sweetin_info = {
     .device = "sweetin",
     .marketname = "Redmi Note 10 Pro",
     .model = "M2101K6P",
-    .build_fingerprint = "Redmi/sweetin/sweetin:11/RKQ1.200826.002/V12.5.8.0.RKFINXM:user/release-keys",
+    .build_fingerprint = "Redmi/sweetin/sweetin:12/RKQ1.210614.002/V13.0.4.0.SKFINXM:user/release-keys",
+    .build_description = "sweetin-user 12 SKQ1.210908.001 V13.0.4.0.SKFINXM release-keys",
 
     .nfc = false,
 };
@@ -43,7 +45,8 @@ static const variant_info_t sweetinpro_info = {
     .device = "sweetin",
     .marketname = "Redmi Note 10 Pro Max",
     .model = "M2101K6I",
-    .build_fingerprint = "Redmi/sweetinpro/sweetin:11/RKQ1.200826.002/V12.5.8.0.RKFINXM:user/release-keys",
+    .build_fingerprint = "Redmi/sweetinpro/sweetin:12/RKQ1.210614.002/V13.0.4.0.SKFINXM:user/release-keys",
+    .build_description = "sweetinpro-user 12 SKQ1.210908.001 V13.0.4.0.SKFINXM release-keys",
 
     .nfc = false,
 };
