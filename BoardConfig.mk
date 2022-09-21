@@ -48,6 +48,9 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 TARGET_BOOTLOADER_BOARD_NAME := sm6150
 TARGET_NO_BOOTLOADER := true
 
+# DRM
+TARGET_ENABLE_MEDIADRM_64 := true
+
 # DTB
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_BOOT_HEADER_VERSION := 2
@@ -58,6 +61,23 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 
 # Display
 TARGET_SCREEN_DENSITY := 440
+
+# FM
+BOARD_HAVE_QCOM_FM := true
+
+# GPS
+LOC_HIDL_VERSION := 4.0
+
+# HIDL
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(DEVICE_PATH)/configs/hidl/xiaomi_vendor_framework_compatibility_matrix.xml
+
+DEVICE_MANIFEST_FILE += \
+    $(DEVICE_PATH)/configs/hidl/manifest.xml \
+    $(DEVICE_PATH)/configs/hidl/xiaomi_manifest.xml
+
+DEVICE_MATRIX_FILE += \
+    device/qcom/common/compatibility_matrix.xml
 
 # Hacks
 BUILD_BROKEN_DUP_RULES := true
@@ -89,6 +109,9 @@ BOARD_KERNEL_CMDLINE += androidboot.memcg=1 cgroup.memory=nokmem,nosocket
 BOARD_KERNEL_CMDLINE += kpti=off
 
 KERNEL_SUPPORTS_LLVM_TOOLS := true
+
+# Media
+TARGET_USES_ION := true
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
