@@ -106,6 +106,27 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 
+# Display
+PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0.vendor \
+    disable_configstore
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/display/qdcm_calib_data_xiaomi_k6_38_0c_0a_fhd_dsc_video_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_xiaomi_k6_38_0c_0a_fhd_dsc_video_dsi_panel.xml \
+    $(LOCAL_PATH)/configs/display/qdcm_calib_data_xiaomi_k6_38_0e_0b_fhd_dsc_video_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_xiaomi_k6_38_0e_0b_fhd_dsc_video_dsi_panel.xml
+
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.display.ad=1 \
+    ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg \
+    ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg \
+    ro.vendor.display.sensortype=2 \
+    debug.sf.disable_backpressure=1 \
+    debug.sf.enable_egl_image_tracker=1 \
+    debug.sf.enable_hwc_vds=1 \
+    debug.sf.latch_unsignaled=1 \
+    vendor.display.idle_time=0 \
+    vendor.display.idle_time_inactive=0
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4-service.clearkey \
@@ -192,6 +213,7 @@ TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
 
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS := \
+    adreno \
     audio \
     bt \
     gps \
