@@ -16,6 +16,37 @@
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# Audio
+PRODUCT_PACKAGES += \
+    android.hardware.audio.service
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
+
+PRODUCT_VENDOR_PROPERTIES += \
+    audio.offload.min.duration.secs=40 \
+    audio.offload.video=true \
+    persist.vendor.audio.hifi=false \
+    persist.vendor.audio.misound.disable=true \
+    persist.vendor.audio.ring.filter.mask=0 \
+    ro.audio.monitorRotation=true \
+    ro.af.client_heap_size_kbyte=7168 \
+    ro.config.vc_call_vol_steps=11 \
+    ro.vendor.audio.soundfx.usb=true \
+    ro.vendor.audio.us.proximity=true \
+    ro.vendor.audio.us.type=mius \
+    vendor.audio.feature.audiozoom.enable=false \
+    vendor.audio.usb.disable.sidetone=true
+
+PRODUCT_ODM_PROPERTIES += \
+    aaudio.mmap_exclusive_policy=2 \
+    ro.vendor.audio.sdk.fluencetype=fluence \
+    vendor.audio.adm.buffering.ms=6 \
+    vendor.audio.offload.track.enable=false \
+    vendor.audio.feature.spkr_prot.enable=true \
+    vendor.audio.spkcal.copy.inhal=true \
+    vendor.audio.spkr_prot.tx.sampling_rate=48000
+
 # Additional Native Libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
@@ -117,6 +148,7 @@ TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
 
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS := \
+    audio \
     gps \
     init \
     overlay \
