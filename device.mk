@@ -19,6 +19,17 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
+# Fstab
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
+
+PRODUCT_PACKAGES += \
+    fstab.qcom
+
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
