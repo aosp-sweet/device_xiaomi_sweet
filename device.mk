@@ -30,6 +30,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.qcom
 
+# Init
+PRODUCT_PACKAGES += \
+    init.target.rc \
+
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
@@ -41,6 +45,10 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Platform
 MSMSTEPPE := sm6150
 TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
+
+# QTI components
+TARGET_COMMON_QTI_COMPONENTS := \
+    init
 
 # Vendor
 $(call inherit-product, vendor/xiaomi/sweet/sweet-vendor.mk)
