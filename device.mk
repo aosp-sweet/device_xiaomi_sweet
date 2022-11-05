@@ -52,6 +52,30 @@ PRODUCT_ODM_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+# Bluetooth
+PRODUCT_PAKCAGES += \
+    libbthost_if
+
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive \
+    persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.scram.enabled=true \
+    persist.vendor.qcom.bluetooth.soc=cherokee \
+    persist.vendor.qcom.bluetooth.twsp_state.enabled=false \
+    ro.vendor.bluetooth.wipower=false \
+    vendor.qcom.bluetooth.soc=cherokee
+
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.vendor.bt.a2dp.aac_whitelist=false \
+    persist.vendor.bt.a2dp.mac_whitelist=false \
+    persist.vendor.btstack.enable.twsplus=true \
+    persist.vendor.btstack.enable.twsplussho=true \
+    persist.vendor.btsatck.absvolfeature=true \
+    persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=false \
+    ro.bluetooth.library_name=libbluetooth_qti.so \
+    vendor.bluetooth.soc=cherokee
+
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
@@ -150,6 +174,7 @@ TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS := \
     audio \
+    bt \
     gps \
     init \
     overlay \
