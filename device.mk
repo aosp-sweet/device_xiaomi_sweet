@@ -38,6 +38,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Overlay
+PRODUCT_PACKAGES += \
+    AOSPASweetFrameworks \
+    SweetFrameworks \
+    SweetSettings \
+    SweetSystemUI
+
+PRODUCT_ENFORCE_RRO_TARGETS += *
+
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -48,7 +57,8 @@ TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
 
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS := \
-    init
+    init \
+    overlay
 
 # Vendor
 $(call inherit-product, vendor/xiaomi/sweet/sweet-vendor.mk)
