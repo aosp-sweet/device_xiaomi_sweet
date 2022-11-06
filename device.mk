@@ -52,6 +52,9 @@ PRODUCT_ODM_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+# API level, the device has been commercially launched on
+PRODUCT_SHIPPING_API_LEVEL := 30
+
 # Bluetooth
 PRODUCT_PAKCAGES += \
     libbthost_if
