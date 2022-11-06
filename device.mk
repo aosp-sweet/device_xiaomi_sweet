@@ -98,6 +98,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SYSTEM_PROPERTIES += \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
 
+# Charger    
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.charger.enable_suspend=true
+    
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.cp.support_qc3p5=0 \
+    persist.vendor.cp.taper_term_mv=7000 \
+    persist.vendor.cp.fcc_main_ua=400000 \
+    persist.vendor.cp.qc3p5_vfloat_offset_uv=110000    
+    
 # Consumer IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
@@ -106,6 +116,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 
+# Data
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.use_data_netmgrd=true \
+    persist.vendor.data.mode=concurrent
+    
 # Display
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor \
@@ -126,13 +141,20 @@ PRODUCT_VENDOR_PROPERTIES += \
     debug.sf.latch_unsignaled=1 \
     vendor.display.idle_time=0 \
     vendor.display.idle_time_inactive=0 \
-    vendor.display.qdcm.mode_combine=1
+    vendor.display.qdcm.mode_combine=1 \
+    vendor.display.skip_refresh_rate_change=1
 
 PRODUCT_VENDOR_PROPERTIES += \
     persist.sys.sf.color_saturation=1.0 \
     persist.sys.sf.native_mode=2 \
     persist.sys.sf.color_mode=9
 
+# DPM    
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.dpm.nsrm.bkg.evt=3955 \
+    persist.vendor.dpm.loglevel=0 \
+    persist.vendor.dpmhalservice.enable=1    
+    
 # DRM
 PRODUCT_PACKAGES += \
     and6roid.hardware.drm@1.4-service.clearkey \
@@ -150,6 +172,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
+# FRP
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.frp.pst=/dev/block/bootdevice/by-name/frp
+    
 # Fstab
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
@@ -212,6 +238,10 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
     hardware/xiaomi
 
+# Netflix
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.netflix.bsp_rev=Q855-16947-1    
+    
 # Neural networks
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
@@ -262,6 +292,35 @@ TARGET_COMMON_QTI_COMPONENTS := \
     vibrator \
     wlan
 
+PRODUCT_VENDOR_PROPERTIES += \    
+    ro.soc.manufacturer=QTI \
+    ro.soc.model=SM7150    
+    
+# RIL    
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.radio.data_ltd_sys_ind=1 \
+    persist.vendor.radio.dynamic_sar=1 \
+    persist.vendor.radio.force_ltd_sys_ind=1 \
+    persist.vendor.radio.force_on_dc=true \
+    persist.vendor.radio.manual_nw_rej_ct=1 \
+    persist.vendor.radio.report_codec=1
+    
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.radio.NO_STAPA=1 \
+    persist.radio.VT_CAM_INTERFACE=1
+    persist.radio.VT_HYBRID_ENABLE=1 \
+    ril.subscription.types=RUIM \
+    ro.telephony.default_cdma_sub=0 \
+    ro.telephony.default_network=22,22    
+
+# Surfaceflinger (RefreshRate)
+PRODUCT_VENDOR_PROPERTIES += \
+    debug.sf.frame_rate_multiple_threshold=60 \
+    ro.surface_flinger.use_content_detection_for_refresh_rate=true \
+    ro.surface_flinger.set_display_power_timer_ms=1000 \
+    ro.surface_flinger.set_idle_timer_ms=4000 \
+    ro.surface_flinger.set_touch_timer_ms=4000
+    
 # Sensors
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
