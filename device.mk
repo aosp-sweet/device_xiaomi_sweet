@@ -270,7 +270,8 @@ $(call inherit-product, vendor/xiaomi/sweet/sweet-vendor.mk)
 
 # WiFi
 PRODUCT_PACKAGES += \
-    libwpa_client
+    libwpa_client \
+    libwfdaac_vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
