@@ -253,6 +253,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     nq-nfc \
     overlay \
     perf \
+    usb \
     wlan
 
 # Sensors
