@@ -231,7 +231,8 @@ PRODUCT_PACKAGES += \
     AOSPASweetFrameworks \
     SweetFrameworks \
     SweetSettings \
-    SweetSystemUI
+    SweetSystemUI \
+    SweetWifiOverlay
 
 PRODUCT_ENFORCE_RRO_TARGETS += *
 
