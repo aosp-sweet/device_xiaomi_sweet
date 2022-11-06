@@ -41,3 +41,10 @@ prebuilt_etc {
     vendor: true,
 }
 
+prebuilt_etc {
+    name: "ueventd.sweet.rc",
+    filename: "ueventd.rc",
+    src: "ueventd.sweet.rc",
+    device_specific: true,
+}
+

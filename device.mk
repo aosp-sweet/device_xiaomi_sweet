@@ -188,7 +188,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.qti.dcvs.sh \
     init.target.rc \
-    init.xiaomi.perf.rc
+    init.xiaomi.perf.rc \
+    ueventd.sweet.rc
 
 # IRSC
 PRODUCT_COPY_FILES += \
