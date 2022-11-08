@@ -1,0 +1,13 @@
+# Audio
+aaudio.mmap_policy=2
+aaudio.mmap_exclusive_policy=2
+ro.audio.monitorRotation=true
+ro.af.client_heap_size_kbyte=7168
+ro.config.media_vol_default=8
+ro.config.media_vol_steps=25
+ro.config.vc_call_vol_default=9
+ro.config.vc_call_vol_steps=11
+ro.vendor.audio.sdk.fluencetype=fluence
+vendor.audio.feature.spkr_prot.enable=true
+vendor.audio.spkcal.copy.inhal=true
+vendor.audio.spkr_prot.tx.sampling_rate=48000

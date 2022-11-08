@@ -1,0 +1,4 @@
+# Audio
+persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
+vendor.audio.adm.buffering.ms=6
+vendor.audio.offload.track.enable=false

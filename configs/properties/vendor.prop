@@ -1,0 +1,72 @@
+# Audio
+audio.offload.video=true
+persist.vendor.audio.hifi=false
+persist.vendor.audio.misound.disable=true
+persist.vendor.audio.ring.filter.mask=0
+
+# Bluetooth
+persist.vendor.btsatck.absvolfeature=true
+persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive
+persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
+persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=true
+persist.vendor.qcom.bluetooth.enable.splita2dp=true
+persist.vendor.qcom.bluetooth.scram.enabled=true
+persist.vendor.qcom.bluetooth.soc=cherokee
+persist.vendor.qcom.bluetooth.twsp_state.enabled=false
+ro.vendor.bluetooth.wipower=false
+vendor.qcom.bluetooth.soc=cherokee
+
+# Charger
+persist.vendor.cp.support_qc3p5=0
+persist.vendor.cp.taper_term_mv=7000
+persist.vendor.cp.fcc_main_ua=400000
+persist.vendor.cp.qc3p5_vfloat_offset_uv=110000
+
+# Data
+ro.vendor.use_data_netmgrd=true
+persist.vendor.data.mode=concurrent
+
+# Display
+ro.vendor.display.ad=1
+ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
+ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
+ro.vendor.display.sensortype=2
+debug.sf.disable_backpressure=1
+debug.sf.enable_egl_image_tracker=1
+debug.sf.enable_hwc_vds=1
+debug.sf.latch_unsignaled=1
+vendor.display.idle_time=0
+vendor.display.idle_time_inactive=0
+vendor.display.qdcm.mode_combine=1
+vendor.display.skip_refresh_rate_change=1
+
+# Display Color Mode
+persist.sys.sf.color_saturation=1.0
+persist.sys.sf.native_mode=2
+persist.sys.sf.color_mode=9
+
+# DPM
+persist.vendor.dpm.nsrm.bkg.evt=3955
+persist.vendor.dpm.loglevel=0
+persist.vendor.dpmhalservice.enable=1
+
+# DRM
+drm.service.enabled=true
+
+# FRP
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Refresh Rate
+debug.sf.frame_rate_multiple_threshold=60
+ro.surface_flinger.use_content_detection_for_refresh_rate=true
+ro.surface_flinger.set_display_power_timer_ms=1000
+ro.surface_flinger.set_idle_timer_ms=4000
+ro.surface_flinger.set_touch_timer_ms=4000
+
+# RIL
+persist.vendor.radio.data_ltd_sys_ind=1
+persist.vendor.radio.dynamic_sar=1
+persist.vendor.radio.force_ltd_sys_ind=1
+persist.vendor.radio.force_on_dc=true
+persist.vendor.radio.manual_nw_rej_ct=1
+persist.vendor.radio.report_codec=1
